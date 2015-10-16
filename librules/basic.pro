@@ -22,6 +22,15 @@
 	public <init>(android.content.Context, android.util.AttributeSet, int);
 }
 
+-keep class * implements android.os.Parcelable {
+	public static final android.os.Parcelable$Creator *;
+}
+
+-keepclassmembers enum * {
+    public static **[] values();
+    public static ** valueOf(java.lang.String);
+}
+
 ## support libraries
 -dontwarn android.support.v4.**
 -keep class android.support.v4.** { *; }
